@@ -16,6 +16,6 @@
            <div class="list_body"><?php echo $list->list_body; ?></div>
        </li>
     <?php endforeach; ?>
-</ul>
+</ul> 
 <br/>
 <p><a href="<?php echo base_url(); ?>lists/add">Create a new List</a></p>
