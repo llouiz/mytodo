@@ -82,6 +82,6 @@ class Lists extends CI_Controller {
         //Create Message
         $this->session->set_flashdata('list_deleted', 'Your list has been deleted');
         //Redirect to list index
-        redirect('lists/index');
+        redirect('lists/index'); 
     }
 }
