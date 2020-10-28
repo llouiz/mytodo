@@ -40,6 +40,6 @@ class List_model extends CI_Model {
         $this->db->where('list_user_id',$user_id);
         $this->db->order_by('create_date', 'asc'); 
         $query = $this->db->get('lists');
-        return $query->result();
+        return $query->result(); 
     }
 }
