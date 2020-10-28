@@ -33,5 +33,5 @@
         <td><a href="<?php echo base_url(); ?>lists/show/<?php echo $list->id; ?>">View List</a></td>
     </tr>
     <?php endforeach; ?>
-    <?php endif; ?>
+    <?php endif; ?> 
 </table>
