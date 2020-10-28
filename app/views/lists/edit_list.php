@@ -34,4 +34,4 @@ $data = array(
 <p>
     <?php echo form_submit($data); ?>
 </p>
-<?php echo form_close(); ?>
+<?php echo form_close(); ?> 
