@@ -18,10 +18,15 @@ class Lists extends CI_Controller {
         $this->load->view('layouts/main',$data);
     }
 
-    public function show($id) {
+    public function show($id){
+        //Get all lists from the model
         $data['list'] = $this->List_model->get_list($id);
-
-        //Load and view layout
+        //Get all completed tasks for this list
+        $data['active_tasks'] = $this->List_model->get_list_tasks($id,true);
+        //Get all uncompleted tasks for this list
+        $data['inactive_tasks'] = $this->List_model->get_list_tasks($id,false);
+        
+        //Load view and layout
         $data['main_content'] = 'lists/show';
         $this->load->view('layouts/main',$data);
     }
