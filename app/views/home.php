@@ -35,3 +35,23 @@
     <?php endforeach; ?>
     <?php endif; ?> 
 </table>
+
+<h3>Latest Tasks</h3>
+<table class="table table-striped" width="50%" cellspacing="5" cellpadding="5">
+    <tr>
+        <th>Task Name</th>
+        <th>List Name</th>
+        <th>Created On</th>
+        <th>View</th>
+    </tr>
+    <?php if(isset($tasks)) : ?>
+    <?php foreach($tasks as $task) : ?>
+        <tr>
+            <td><?php echo $task->task_name; ?></td>
+            <td><?php echo $task->list_name; ?></td>
+            <td><?php echo $task->create_date; ?></td>
+            <td><a href="<?php echo base_url(); ?>tasks/show/<?php echo $task->id; ?>">View Task</a></td>
+        </tr>
+    <?php endforeach; ?>
+    <?php endif;?>
+</table>
