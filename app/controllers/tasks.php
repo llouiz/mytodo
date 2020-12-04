@@ -78,4 +78,20 @@ class Tasks extends CI_Controller {
         //Redirect to list index
         redirect('lists/show/'.$list_id.'');
     }
+
+    public function mark_complete($task_id) {
+        if($this->Task_model->mark_complete($task_id)) {
+            $list_id = $this->Task_model->get_task_list_id($task_id);
+            $this->session->set_flashdata('marked_complete', 'Task has been marked complete');
+            redirect('/lists/show/'.$list_id.'');
+        }
+    }
+
+    public function mark_new($task_id) {
+        if($this->Task_model->mark_new($task_id)) {
+            $list_id = $this->Task_model->get_task_list_id($task_id);
+            $this->session->set_flashdata('marked_new', 'Task has been marked new');
+            redirect('/lists/show/'.$list_id.'');
+        }
+    }
 }
